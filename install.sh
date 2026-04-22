@@ -16,6 +16,16 @@ install_skill() {
   fi
 
   mkdir -p "$dst_dir"
+
+  local src_real dst_real
+  src_real="$(readlink -f "$src")"
+  dst_real="$(readlink -f "$dst" 2>/dev/null || true)"
+
+  if [ -n "$dst_real" ] && [ "$src_real" = "$dst_real" ]; then
+    echo "Already linked/installed ${name} -> ${dst}"
+    return 0
+  fi
+
   cp "$src" "$dst"
   echo "Installed ${name} -> ${dst}"
 }
