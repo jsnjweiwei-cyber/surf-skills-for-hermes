@@ -43,6 +43,26 @@ chmod +x install.sh
 ./install.sh surf
 ```
 
+## 将 Hermes 生效路径同步到这个仓库
+
+如果你希望 Hermes 直接通过符号链接从本仓库加载 skill：
+
+```bash
+chmod +x sync-to-hermes.sh
+./sync-to-hermes.sh
+```
+
+只检查当前链接状态：
+
+```bash
+./sync-to-hermes.sh status
+```
+
+它会让下面两个 Hermes 生效路径都指向仓库源码：
+
+- `~/.hermes/skills/autonomous-ai-agents/install-surf-for-hermes`
+- `~/.hermes/skills/custom/surf`
+
 ## 手动安装
 
 ```bash

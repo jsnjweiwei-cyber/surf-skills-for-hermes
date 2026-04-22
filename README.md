@@ -33,6 +33,7 @@ skills/
   surf/
     SKILL.md
 install.sh
+sync-to-hermes.sh
 README.md
 README.zh-CN.md
 LICENSE
@@ -51,6 +52,26 @@ Install only one skill:
 ./install.sh install-surf-for-hermes
 ./install.sh surf
 ```
+
+## Sync active Hermes paths to this repo
+
+If you want Hermes to load these skills directly from this repository via symlinks:
+
+```bash
+chmod +x sync-to-hermes.sh
+./sync-to-hermes.sh
+```
+
+Check current link state only:
+
+```bash
+./sync-to-hermes.sh status
+```
+
+This keeps these active Hermes paths pointed at the repository source:
+
+- `~/.hermes/skills/autonomous-ai-agents/install-surf-for-hermes`
+- `~/.hermes/skills/custom/surf`
 
 ## Manual install into Hermes
 
