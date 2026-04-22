@@ -29,18 +29,25 @@ install.sh
 
 ## 快速安装
 
-给仓库里的安装脚本执行权限后，直接安装：
+对新用户来说，推荐直接执行这一条。它会：
+- 安装两个 skill
+- 安装 Surf CLI
+- 执行 `surf sync`
+- 验证 `surf` 已能正常使用
 
 ```bash
 chmod +x install.sh
 ./install.sh all
 ```
 
-只安装单个 skill：
+执行成功后，用户应当就可以直接使用 Surf。
+
+如果只想安装部分内容：
 
 ```bash
-./install.sh install-surf-for-hermes
-./install.sh surf
+./install.sh install-surf-for-hermes   # 只安装辅助说明 skill
+./install.sh surf                      # 安装 surf skill + Surf CLI
+./install.sh cli                       # 只安装 / 更新 Surf CLI
 ```
 
 ## 将 Hermes 生效路径同步到这个仓库
@@ -81,14 +88,13 @@ hermes skills list | grep -E 'surf|install-surf'
 
 ## 说明
 
-- skill 文件本身不会自动安装 AskSurf CLI。
-- 如果你要真正使用 `surf`，仍需单独安装 CLI，并验证：
+`./install.sh all` 的目标就是让新用户执行完后即可直接使用 Surf：
+- 安装两个 skill 文件
+- 安装 AskSurf CLI
+- 自动执行 `surf sync`
+- 自动验证 `surf --help`、`surf list-operations` 和 BTC 实时报价查询
 
-```bash
-surf --help
-surf list-operations
-surf market-price --symbol BTC --json
-```
+如果用户的 `PATH` 里暂时没有 `~/.local/bin`，脚本会提示该怎么加；在此之前也仍然可以用脚本输出的完整路径直接执行 Surf。
 
 ## License
 

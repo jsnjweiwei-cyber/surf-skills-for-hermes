@@ -31,6 +31,17 @@ So for Hermes, the reliable approach is:
 
 ## Verified working procedure
 
+If the user is installing from this repository directly, they can use the helper script for a one-command setup:
+
+```bash
+chmod +x install.sh
+./install.sh all
+```
+
+That flow installs both Hermes skill files, installs the Surf CLI, runs `surf sync`, and verifies the CLI with a live query.
+
+Manual procedure:
+
 ### 1) Fetch the skill repo and inspect it
 
 Clone or otherwise fetch:

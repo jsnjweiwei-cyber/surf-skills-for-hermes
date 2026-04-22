@@ -41,16 +41,21 @@ LICENSE
 
 ## Quick install
 
+For new users, this is the recommended one-command setup. It installs both skills, installs the Surf CLI, syncs the API spec cache, and verifies that `surf` works:
+
 ```bash
 chmod +x install.sh
 ./install.sh all
 ```
 
-Install only one skill:
+After this finishes successfully, Surf should be ready to use.
+
+Install only one piece:
 
 ```bash
-./install.sh install-surf-for-hermes
-./install.sh surf
+./install.sh install-surf-for-hermes   # helper skill only
+./install.sh surf                      # surf skill + Surf CLI
+./install.sh cli                       # Surf CLI only
 ```
 
 ## Sync active Hermes paths to this repo
@@ -103,14 +108,13 @@ Use this when you want Hermes to query live crypto data through the `surf` CLI i
 
 ## Important note
 
-The skill files do not install the AskSurf CLI by themselves.
-To actually use `surf`, install the CLI separately and verify with commands like:
+`./install.sh all` is intended to leave a new user with a working Surf setup immediately:
+- installs the two skill files
+- installs the AskSurf CLI
+- runs `surf sync`
+- verifies `surf --help`, `surf list-operations`, and a live BTC price query
 
-```bash
-surf --help
-surf list-operations
-surf market-price --symbol BTC --json
-```
+If `~/.local/bin` is not in the user's `PATH`, the script prints the exact command they need to add. In that case the CLI still works via the full path it prints.
 
 ## License
 
