@@ -2,7 +2,7 @@
 
 这是一个面向 Hermes Agent 的公开技能仓库，收录了两个与 AskSurf 相关的自定义 skill：
 
-- `install-surf-skill-for-hermes`
+- `install-surf-for-hermes`
   - 说明如何在 Hermes 中手动安装 AskSurf skill
   - 解决官方 `skills.sh` 流程暂不直接支持 Hermes 的问题
 - `surf`
@@ -12,7 +12,7 @@
 
 ```text
 skills/
-  install-surf-skill-for-hermes/
+  install-surf-for-hermes/
     SKILL.md
   surf/
     SKILL.md
@@ -39,15 +39,15 @@ chmod +x install.sh
 只安装单个 skill：
 
 ```bash
-./install.sh install-surf-skill-for-hermes
+./install.sh install-surf-for-hermes
 ./install.sh surf
 ```
 
 ## 手动安装
 
 ```bash
-mkdir -p ~/.hermes/skills/custom/install-surf-skill-for-hermes
-cp skills/install-surf-skill-for-hermes/SKILL.md ~/.hermes/skills/custom/install-surf-skill-for-hermes/SKILL.md
+mkdir -p ~/.hermes/skills/custom/install-surf-for-hermes
+cp skills/install-surf-for-hermes/SKILL.md ~/.hermes/skills/custom/install-surf-for-hermes/SKILL.md
 
 mkdir -p ~/.hermes/skills/custom/surf
 cp skills/surf/SKILL.md ~/.hermes/skills/custom/surf/SKILL.md

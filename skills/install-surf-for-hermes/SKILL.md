@@ -1,5 +1,5 @@
 ---
-name: install-surf-skill-for-hermes
+name: install-surf-for-hermes
 description: Safely install AskSurf's `surf` skill and CLI for Hermes Agent when the official `npx skills add asksurf-ai/surf-skills --skill surf` flow does not support Hermes directly.
 version: 1.0.1
 author: Hermes Agent

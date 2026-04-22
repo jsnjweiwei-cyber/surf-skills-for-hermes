@@ -23,7 +23,7 @@ install_skill() {
 usage() {
   cat <<'EOF'
 Usage:
-  ./install.sh install-surf-skill-for-hermes
+  ./install.sh install-surf-for-hermes
   ./install.sh surf
   ./install.sh all
 
@@ -32,14 +32,14 @@ EOF
 }
 
 case "${1:-all}" in
-  install-surf-skill-for-hermes)
-    install_skill install-surf-skill-for-hermes
+  install-surf-for-hermes)
+    install_skill install-surf-for-hermes
     ;;
   surf)
     install_skill surf
     ;;
   all)
-    install_skill install-surf-skill-for-hermes
+    install_skill install-surf-for-hermes
     install_skill surf
     ;;
   -h|--help|help)
