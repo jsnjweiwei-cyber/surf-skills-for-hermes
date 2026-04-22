@@ -33,7 +33,6 @@ skills/
   surf/
     SKILL.md
 install.sh
-sync-to-hermes.sh
 README.md
 README.zh-CN.md
 LICENSE
@@ -58,29 +57,9 @@ Install only one piece:
 ./install.sh cli                       # Surf CLI only
 ```
 
-## Sync active Hermes paths to this repo
-
-If you want Hermes to load these skills directly from this repository via symlinks:
-
-```bash
-chmod +x sync-to-hermes.sh
-./sync-to-hermes.sh
-```
-
-Check current link state only:
-
-```bash
-./sync-to-hermes.sh status
-```
-
-This keeps these active Hermes paths pointed at the repository source:
-
-- `~/.hermes/skills/autonomous-ai-agents/install-surf-for-hermes`
-- `~/.hermes/skills/custom/surf`
-
 ## Manual install into Hermes
 
-Copy either skill into your Hermes custom skills directory.
+If you prefer not to use the helper script, you can still copy the two skill files manually:
 
 ```bash
 mkdir -p ~/.hermes/skills/custom/install-surf-for-hermes
@@ -88,6 +67,12 @@ cp skills/install-surf-for-hermes/SKILL.md ~/.hermes/skills/custom/install-surf-
 
 mkdir -p ~/.hermes/skills/custom/surf
 cp skills/surf/SKILL.md ~/.hermes/skills/custom/surf/SKILL.md
+```
+
+After that, install the Surf CLI by running:
+
+```bash
+./install.sh cli
 ```
 
 Then verify:

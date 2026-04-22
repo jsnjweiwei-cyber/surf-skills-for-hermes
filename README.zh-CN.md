@@ -50,27 +50,9 @@ chmod +x install.sh
 ./install.sh cli                       # 只安装 / 更新 Surf CLI
 ```
 
-## 将 Hermes 生效路径同步到这个仓库
-
-如果你希望 Hermes 直接通过符号链接从本仓库加载 skill：
-
-```bash
-chmod +x sync-to-hermes.sh
-./sync-to-hermes.sh
-```
-
-只检查当前链接状态：
-
-```bash
-./sync-to-hermes.sh status
-```
-
-它会让下面两个 Hermes 生效路径都指向仓库源码：
-
-- `~/.hermes/skills/autonomous-ai-agents/install-surf-for-hermes`
-- `~/.hermes/skills/custom/surf`
-
 ## 手动安装
+
+如果你不想用安装脚本，也可以直接手动复制这两个 skill 文件：
 
 ```bash
 mkdir -p ~/.hermes/skills/custom/install-surf-for-hermes
@@ -78,6 +60,12 @@ cp skills/install-surf-for-hermes/SKILL.md ~/.hermes/skills/custom/install-surf-
 
 mkdir -p ~/.hermes/skills/custom/surf
 cp skills/surf/SKILL.md ~/.hermes/skills/custom/surf/SKILL.md
+```
+
+然后执行下面这条命令安装 Surf CLI：
+
+```bash
+./install.sh cli
 ```
 
 安装后可验证：
