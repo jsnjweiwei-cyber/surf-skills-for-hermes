@@ -13,6 +13,7 @@ skills/
     SKILL.md
   surf/
     SKILL.md
+install.sh
 ```
 
 ## Included skills
@@ -30,7 +31,23 @@ Purpose:
 - teach Hermes when to route crypto questions to the `surf` CLI
 - document discovery, usage patterns, endpoint selection, caveats, and troubleshooting
 
-## Install into Hermes manually
+## Install into Hermes
+
+Quick install with the helper script:
+
+```bash
+chmod +x install.sh
+./install.sh all
+```
+
+Or install only one skill:
+
+```bash
+./install.sh install-surf-skill-for-hermes
+./install.sh surf
+```
+
+## Manual install into Hermes
 
 Copy either skill into your Hermes custom skills directory.
 

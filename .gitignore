@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Shell artifacts
+*.log
+
+# Skill local installs (do not commit)
+.local/
+.tmp/
