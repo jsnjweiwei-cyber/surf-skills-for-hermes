@@ -1,9 +1,28 @@
 # surf-skills-for-hermes
 
-A small GitHub repository that packages two Hermes-compatible custom skills related to AskSurf:
+Public Hermes-compatible skills for AskSurf.
 
-- `install-surf-skill-for-hermes`: manual installation workflow for making AskSurf usable in Hermes when the upstream `skills.sh` flow does not support Hermes directly
-- `surf`: the runtime skill that teaches Hermes how to use the `surf` CLI for live crypto data
+This repository packages two custom skills that make AskSurf usable inside Hermes Agent:
+
+- `install-surf-skill-for-hermes`
+  - explains why the upstream `skills.sh` install flow is not enough for Hermes
+  - documents the manual Hermes installation workflow
+  - covers `surf` CLI installation and verification
+- `surf`
+  - teaches Hermes when and how to route crypto questions to the `surf` CLI
+  - documents endpoint discovery, usage patterns, caveats, and troubleshooting
+
+Chinese README: [README.zh-CN.md](README.zh-CN.md)
+
+## Why this repo exists
+
+AskSurf provides a powerful `surf` CLI and upstream skill content, but Hermes users may need a Hermes-specific packaging flow.
+This repo gives you a ready-to-copy, GitHub-hosted layout that works well for:
+
+- personal Hermes skill backups
+- public sharing
+- repeatable local installation
+- documenting a Hermes-specific Surf workflow
 
 ## Repository layout
 
@@ -14,33 +33,19 @@ skills/
   surf/
     SKILL.md
 install.sh
+README.md
+README.zh-CN.md
+LICENSE
 ```
 
-## Included skills
-
-### 1. install-surf-skill-for-hermes
-
-Purpose:
-- explain why `npx skills add asksurf-ai/surf-skills --skill surf` is insufficient for Hermes
-- document the manual Hermes install path
-- document how to install and verify the real `surf` CLI
-
-### 2. surf
-
-Purpose:
-- teach Hermes when to route crypto questions to the `surf` CLI
-- document discovery, usage patterns, endpoint selection, caveats, and troubleshooting
-
-## Install into Hermes
-
-Quick install with the helper script:
+## Quick install
 
 ```bash
 chmod +x install.sh
 ./install.sh all
 ```
 
-Or install only one skill:
+Install only one skill:
 
 ```bash
 ./install.sh install-surf-skill-for-hermes
@@ -50,8 +55,6 @@ Or install only one skill:
 ## Manual install into Hermes
 
 Copy either skill into your Hermes custom skills directory.
-
-Example:
 
 ```bash
 mkdir -p ~/.hermes/skills/custom/install-surf-skill-for-hermes
@@ -67,10 +70,20 @@ Then verify:
 hermes skills list | grep -E 'surf|install-surf'
 ```
 
-## Notes
+## What each skill does
 
-- The skill files alone do not install the AskSurf CLI.
-- To actually use `surf`, install the CLI separately and verify commands like:
+### install-surf-skill-for-hermes
+
+Use this when you want to install AskSurf support into Hermes and need a Hermes-compatible workflow.
+
+### surf
+
+Use this when you want Hermes to query live crypto data through the `surf` CLI instead of relying on stale model knowledge.
+
+## Important note
+
+The skill files do not install the AskSurf CLI by themselves.
+To actually use `surf`, install the CLI separately and verify with commands like:
 
 ```bash
 surf --help
